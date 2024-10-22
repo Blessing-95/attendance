@@ -24,47 +24,47 @@ const getPointerPosition = (event) => {
 };
 
 // Mouse events
-canvas.addEventListener('mousedown', () => {
+canvas.addEventListener('mousedown', (event) => {
   isDrawing = true;
+  const position = getPointerPosition(event);
+  ctx.beginPath(); // Start a new path
+  ctx.moveTo(position.x, position.y); // Move to the starting point
 });
 
 canvas.addEventListener('mousemove', (event) => {
   if (isDrawing) {
     const position = getPointerPosition(event);
-    ctx.lineWidth = 0.2;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = '#0A1172';
-    ctx.lineTo(position.x, position.y);
-    ctx.stroke();
+    ctx.lineTo(position.x, position.y); // Draw to the current position
+    ctx.stroke(); // Render the stroke
   }
 });
 
 canvas.addEventListener('mouseup', () => {
   isDrawing = false;
-  ctx.beginPath();
+  ctx.closePath(); // Close the path when drawing stops
 });
 
 // Touch events
 canvas.addEventListener('touchstart', (event) => {
   isDrawing = true;
+  const position = getPointerPosition(event);
+  ctx.beginPath(); // Start a new path
+  ctx.moveTo(position.x, position.y); // Move to the starting point
   event.preventDefault(); // Prevent scrolling while drawing
 });
 
 canvas.addEventListener('touchmove', (event) => {
   if (isDrawing) {
     const position = getPointerPosition(event);
-    ctx.lineWidth = 1;
-    ctx.lineCap = 'round';
-    ctx.strokeStyle = '#0A1172';
-    ctx.lineTo(position.x, position.y);
-    ctx.stroke();
+    ctx.lineTo(position.x, position.y); // Draw to the current position
+    ctx.stroke(); // Render the stroke
   }
   event.preventDefault(); // Prevent scrolling while drawing
 });
 
 canvas.addEventListener('touchend', () => {
   isDrawing = false;
-  ctx.beginPath();
+  ctx.closePath(); // Close the path when drawing stops
   event.preventDefault();
 });
 
@@ -72,6 +72,7 @@ canvas.addEventListener('touchend', () => {
 document.getElementById('clear-signature').addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
 
 
 
