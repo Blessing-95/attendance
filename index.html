@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+        <h1>LSMOH</h1> 
+
+        <div class="links">
+            <a href="#">General Attendance</a>
+            <a href="#">Payment Sheet</a>
+        </div>
+    </header>
+
+        <h1>Attendance Form</h1>
+        <form id="attendance-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+    
+          <label for="organization">Organization:</label>
+          <input type="text" id="organization" name="organization" required>
+    
+          <label for="designation">Designation:</label>
+          <input type="text" id="designation" name="designation" required>
+            
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="johndoe@gmail.com">
+          
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+234">
+        </form>
+        <div class="sign">
+          <h2>Signature:</h2>
+          
+          <canvas id="signature-canvas" width="300" height="150"></canvas>
+          <div class="btn-container">
+          <button type="button" id="clear-signature" class="btn-1">Clear Signature</button>
+          <button type="submit" class="btn-2"  id="submit-btn">Submit</button>
+      </div>
+      </div>
+  
+      <div id="submitted-data" class="hidden">
+        <h2>Submitted Data</h2>
+        <p><strong>Name:</strong> <span id="display-name"></span></p>
+        <p><strong>Organization:</strong> <span id="display-organization"></span></p>
+        <p><strong>Designation:</strong> <span id="display-designation"></span></p>
+        <p><strong>E-mail:</strong> <span id="display-email"></span></p>
+        <p><strong>Phone Number:</strong> <span id="display-phone"></span></p>
+        <p><strong>Signature:</strong></p>
+        <img id="display-signature" alt="Submitted Signature">
+      </div>
+  
+
+      
+    <footer>
+      
+      &copy; All Right Reserved 2024
+
+    </footer>
+
+  </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
