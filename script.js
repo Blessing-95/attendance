@@ -53,7 +53,7 @@ canvas.addEventListener('touchstart', (event) => {
 canvas.addEventListener('touchmove', (event) => {
   if (isDrawing) {
     const position = getPointerPosition(event);
-    ctx.lineWidth = 0.2;
+    ctx.lineWidth = 1;
     ctx.lineCap = 'round';
     ctx.strokeStyle = '#0A1172';
     ctx.lineTo(position.x, position.y);
