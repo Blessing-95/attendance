@@ -23,6 +23,11 @@ const getPointerPosition = (event) => {
   }
 };
 
+// Set drawing styles
+ctx.lineWidth = 1;        // Set line width
+ctx.lineCap = 'round';    // Set line cap to 'round' for smooth edges
+ctx.strokeStyle = '#0A1172'; // Set line color to black
+
 // Mouse events
 canvas.addEventListener('mousedown', (event) => {
   isDrawing = true;
@@ -72,6 +77,7 @@ canvas.addEventListener('touchend', () => {
 document.getElementById('clear-signature').addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
 
 
 
